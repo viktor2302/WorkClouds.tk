@@ -1,0 +1,123 @@
+<html>
+	<meta charset="utf-8"/>
+	<title>hello</title>
+	<head>
+		<link rel="stylesheet" href="jquery.mb.YTPlayer.min.css">
+		<style>
+
+		*{
+			padding: 0;
+			margin:0;
+		}
+		body{
+			padding: 0;
+			background: black;
+			color: white;
+		}
+
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		#flex-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap:wrap;
+			justify-content:center;
+		}
+		a {
+			position: relative;
+			bottom:37px;
+			right: 90px;
+			text-decoration: none;
+			padding: 25px;
+		}
+
+		a[name="first"]{
+			position: relative;
+			right: 94px;
+		}
+
+ 		#customElement {
+            width: 100%;
+            height: 100vh;
+            background: rgba(81, 150, 191, 0.60);
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            
+            
+        }
+
+		</style>
+
+
+	</head>
+
+	<body>
+		
+
+	<div id="wrapper">
+    	<div id="customElement" style="background: #ddd url('assets/mask-1.png') no-repeat center center; background-size: cover"
+         class="player" data-property="{
+         videoURL:'https://www.youtube.com/watch?v=mdbmOyLZkdo',
+         containment:'#customElement',
+          showControls:false, 
+          autoPlay:true, 
+          loop:false, 
+          mute:true, 
+          startAt:0, 
+          opacity:1, 
+          addRaster:true, 
+          quality:'default'}"
+            >
+        <div id="testText">
+            <div id="flex-container">
+		<div class="flex-element"><img src="iconCloud.svg" alt="first"><a href="" name="first">главная</a></div>
+		<div class="flex-element"><img src="iconCloud.svg" alt=""><a href="">хэллоу</a></div>
+		<div class="flex-element"><img src="iconCloud.svg" alt=""><a href="">дауны</a></div>
+		<div class="flex-element"><img src="iconCloud.svg" alt=""><a href="">как</a></div>
+		<div class="flex-element"><img src="iconCloud.svg" alt=""><a href="">дела</a></div>
+		<div class="flex-element"><img src="iconCloud.svg" alt=""><a href="">епты</a></div>
+
+	</div>
+
+
+        </div>
+    	</div>
+
+</div>
+<?php  
+require "db.php";
+?>
+<?php if(isset($_SESSION['logged_user'])) : ?>
+	Авторизован! <br/>
+	Хеллоу, <?php echo $_SESSION['logged_user']->login; ?>!
+	<hr>
+	<a href="logout.php">Выйти</a>
+<?php else : ?>
+<a href="login.php">Авторизоваться</a></br>
+<a href="signup.php">Регистрация</a>
+<?php endif; ?>
+	
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="jquery.mb.YTPlayer.min.js"></script>
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            var isIframe=function(){var a=!1;try{self.location.href!=top.location.href&&(a=!0)}catch(b){a=!0}return a};
+            myPlayer = jQuery(".player").YTPlayer();
+
+
+        });
+        $('#wrapper a').on('click', function(e){
+        	e.preventDefault();
+        });
+
+
+
+    </script>
+	</body>
+</html>

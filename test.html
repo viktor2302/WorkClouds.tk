@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+02
+	<html>
+03
+	    <head>
+04
+	        <meta charset="utf-8" />
+05
+	        <title>Впечатляющее представление продукта на CSS3 | Материалы сайта RUSELLER.COM</title>
+06
+	         
+07
+	        <!-- Шрифты Google Webfonts и стили для демонстарции -->
+08
+	        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans:300&subset=latin,cyrillic" />
+09
+	        <link rel="stylesheet" href="assets/css/styles.css" />
+10 <style>
+	#impress:not(.impress-not-supported) .step{
+07
+	    opacity:0.4;
+08
+	}
+09
+	 
+10
+	#impress .step{
+11
+	    width:700px;
+12
+	    height: 600px;
+13
+	    position:relative;
+14
+	    margin:0 auto;
+15
+	     
+16
+	    -moz-transition:1s opacity;
+17
+	    -webkit-transition:1s opacity;
+18
+	    transition:1s opacity;
+19
+	}
+20
+	 
+21
+	#impress .step.active{
+22
+	    opacity:1;
+23
+	}
+24
+	 
+25
+	#impress h2{
+26
+	    font: normal 44px/1.5 'PT Sans Narrow', sans-serif;
+27
+	    color:#444648;
+28
+	    position:absolute;
+29
+	    z-index:10;
+30
+	}
+31
+	 
+32
+	#impress p{
+33
+	    font: normal 18px/1.3 'Open Sans', sans-serif;
+34
+	    color:#27333f;
+35
+	    position:absolute;
+36
+	    z-index:10;
+37
+	}
+38
+	 
+39
+	#impress img{
+40
+	    position:absolute;
+41
+	    z-index:1;
+42
+	}
+	#impress #intro{
+07
+	    width: 500px;
+08
+	}
+09
+	 
+10
+	#intro h2{
+11
+	    text-align: center;
+12
+	    width: 100%;
+13
+	}
+14
+	 
+15
+	#intro p{
+16
+	    font-size: 22px;
+17
+	    left: 290px;
+18
+	    line-height: 1.6;
+19
+	    top: 220px;
+20
+	    white-space: nowrap;
+21
+	}
+22
+	 
+23
+	#intro img{
+24
+	    top: 120px;
+25
+	}
+</style>
+	         
+11
+	        <!--[if lt IE 9]>
+12
+	          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+13
+	        <![endif]-->
+14 <script>
+	$(function(){
+
+	 
+
+	    var imp = impress();
+
+	 
+
+	    $('#arrowLeft').click(function(e){
+
+	        imp.prev();
+
+	        e.preventDefault();
+
+	    });
+
+	 
+
+	    $('#arrowRight').click(function(e){
+
+	        imp.next();
+
+	        e.preventDefault();
+
+	    });
+
+	 
+
+	});
+</script>
+	    </head>
+15
+	     
+16
+	    <body>
+17
+	 
+18
+	        <div id="impress" class="impress-not-supported">
+19
+	             
+20
+	            <!-- Материалы будут располагаться здесь -->         
+21
+	             
+22
+	        </div>
+23
+	 
+24
+	        <a id="arrowLeft" class="arrow">&lt;</a>
+25
+	        <a id="arrowRight" class="arrow">&gt;</a>
+26
+	        
+27
+	        <!-- JavaScript -->
+28
+	        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+29
+	        <script src="assets/js/impress.js"></script>
+30
+	        <script src="assets/js/script.js"></script>
+31
+	 <!-- Первый слайд выводится по умолчанию, поэтому у него будет начальное положение-->
+02
+	         <div id="intro" class="step" data-x="0" data-y="0">
+03
+	     <h2>Представляем Galaxy Nexus</h2>
+04
+	     <p>Android 4.0<br /> Экран Super Amoled 720p<br /> Двухядерный процессор 1.2 GHzU<br /> Емкость памяти 32 GB<br /> Быстрая камера</p>
+05
+	     <img src="assets/img/nexus_1.jpg" width="232" height="458" alt="Galaxy Nexus" />
+06
+	 </div>
+07
+	  
+08
+	<!-- Второй слайд смещается, поворачивается и увеличивается-->
+09
+	 <div id="simplicity" class="step" data-x="1100" data-y="1200" data-scale="1.8" data-rotate="190">
+10
+	     <h2>Простота в Android 4.0</h2>
+11
+	     <p>Android 4.0, Ice Cream Sandwich открывает совершенно новый вид и ощущения от Android. Прелестные шаблоны с  изысканой анимацией и восхитительными цветами создают ощущение жизни. </p>
+12
+	     <img src="assets/img/nexus_2.jpg" width="289" height="535" alt="Galaxy Nexus" />
+13
+	 </div>
+14
+	  
+15
+	<!-- Для остальных слайдов производятся подобные манипуляции -->
+16
+	 <div id="connect" class="step" data-x="-300" data-y="600" data-scale="0.2" data-rotate="270">
+17
+	     <h2>Всегда на связи</h2>
+18
+	     <p>Расскажи о своих важных моментах в жизни всем. Galaxy Nexus поможет поделиться новостью легко и быстро. </p>
+19
+	     <img src="assets/img/nexus_3.jpg" width="558" height="329" alt="Galaxy Nexus" />
+20
+	 </div>
+21
+	  
+22
+	 <div id="upload" class="step" data-x="-200" data-y="1500" data-rotate="180">
+23
+	     <h2>Мгновенная загрузка</h2>
+24
+	     <p>Ваши фотографии будут автоматически загружены с помощью Instant Upload, чтобы их увидели друзья и близкие.</p>
+25
+	     <img src="assets/img/nexus_4.jpg" width="248" height="510" alt="Galaxy Nexus" />
+26
+	 </div>
+27
+	  
+28
+	 <div id="music" class="step" data-x="-1200" data-y="1000" data-scale="0.8" data-rotate="270">
+29
+	     <h2>Шагай по жизни вместе с Google Music</h2>
+30
+	     <p>Google Music сделает поиск, покупку и прослушивание музыки простым и приятным делом. Сохраяняй свой коллекции, отправляй их на свой Galaxy Nexus, ноутбук или устройство с Android.</p>
+31
+	     <img src="assets/img/nexus_5.jpg" width="570" height="389" alt="Galaxy Nexus" />
+32
+	 </div>
+32
+	    </body>
+33
+	</html>

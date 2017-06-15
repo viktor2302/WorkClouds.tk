@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="impress.js-master/js/impress.js"></script>
+  <style>
+  .link {
+  margin-top: 20px;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: url(iconCloud.svg) no-repeat;
+  background-size: 300px 300px;
+  color: black;
+}
+.link span {
+  color: black;
+  display: block;
+  width: 0px;
+  height: 0px;
+  position: relative;
+  left: 110px;
+  top: 160px;
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+}
+
+.link span[name="auth"]{
+  position: relative;
+  top: 148px;
+}
+
+.link span[name="about"]{
+  position: relative;
+  left: 125px;
+}
+
+.link span[name="price"]{
+  position: relative;
+  left: 53px;
+}
+
+    </style>
+  
+</head>
+<body>
+  
+  <div id="wrapper">
+	<video src="videoplayback.mp4" autoplay="true" loop="true" height="100%" width="100%" preload="true"></video>
+  <div id="testText">
+  <div id="impress">
+    <div id="flex-container">
+      
+    <div class="flex-element"><a class="link" href=""><span>Новости</span></a></div>
+    <div class="flex-element"><a class="link" href=""><span>Скачать</span></a></div>
+    <div class="flex-element"><a class="link" href=""><span name="price">Пожертвования</span></a></div>
+    <div class="flex-element"><a class="link" href=""><span name="about">Онас</span></a></div>
+    <div class="flex-element"><a class="link" href="login.php"><span name="auth">Личный кабинет</span></a></div>
+    <div class="flex-element"><a class="link" href=""><span name="auth">Обратная связь</span></a></div>
+
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
